@@ -1,8 +1,18 @@
 'use client';
 
 import { Menu, X, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
-const navLinks = ['Home', 'Services', 'Portfolio', 'Industries', 'About Us', 'Blogs', 'Contact'];
+const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Portfolio', href: '/#portfolio' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'Industries', href: '#' },
+  { label: 'About Us', href: '#' },
+  { label: 'Blogs', href: '#' },
+  { label: 'Contact', href: '#' },
+];
 
 export default function Header({
   scrolled,
@@ -30,13 +40,13 @@ export default function Header({
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
-            <a
-              key={link}
-              href="#"
+            <Link
+              key={link.label}
+              href={link.href}
               className="text-sm font-medium text-[#4A5568] hover:text-[#6C4CFF] transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-[#6C4CFF]/5"
             >
-              {link}
-            </a>
+              {link.label}
+            </Link>
           ))}
         </nav>
 
@@ -65,13 +75,13 @@ export default function Header({
         <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
           <div className="px-6 py-4 space-y-1">
             {navLinks.map((link) => (
-              <a
-                key={link}
-                href="#"
+              <Link
+                key={link.label}
+                href={link.href}
                 className="block text-sm font-medium text-[#4A5568] hover:text-[#6C4CFF] py-3 border-b border-gray-50 transition-colors"
               >
-                {link}
-              </a>
+                {link.label}
+              </Link>
             ))}
             <a
               href="#"

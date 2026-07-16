@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "### **Pricing Page Layout Breakdown**  \n\n\n#### **1. Sidebar Categories**  \nA **left-aligned sidebar** (purple background) contains 8 categories for filtering packages:  \n- *All Packages* (highlighted as the active filter)  \n- Business Websites  \n- E-Commerce Stores  \n- Portfolio Websites  \n- School & College  \n- Hospital & Clinic  \n- Real Estate Websites  \n- Custom Web Applications  \n\nEach category has an icon (e.g., shopping cart for E-Commerce, graduation cap for School/College) and text, with *All Packages* styled as the primary filter.  \n\n\n#### **2. Pricing Card Count**  \nThere are **6 pricing cards** arranged in a 3×2 grid (3 cards per row, 2 rows).  \n\n\n#### **3. Highlighted Card**  \nThe **“E-Commerce Website” card** is highlighted with:  \n- A purple “Popular” badge in the top-right corner.  \n- A purple background for the “Get Started” button (vs. white buttons on other cards).  \n\n\n#### **4. Card Content Structure**  \nEach card follows a consistent structure:  \n- **Icon**: A purple icon (e.g., computer for Business, shopping cart for E-Commerce) at the top.  \n- **Title**: Package name (e.g., “Business Website”).  \n- **Subtitle**: Brief description (e.g., “Perfect for startups and small businesses”).  \n- **Price**: Bold price (e.g., ₹4,999) with “Starting from” text below.  \n- **Features**: Bulleted list of included services (e.g., “5–10 Pages,” “Responsive Design,” “Free SSL Certificate”).  \n- **CTA Button**: “Get Started →” (purple for highlighted card, white for others).  \n\n\n#### **5. Color Scheme**  \n- **Primary**: Purple (#6c5ce7) for accents (buttons, badges, icons, sidebar).  \n- **Secondary**: White background for cards, with light gray text for descriptions.  \n- **Text**: Dark gray/black for titles, purple for prices, and gray for feature details.  \n- **Highlights**: Purple “Popular” badge and CTA button for the E-Commerce card.  \n\n\n#### **6. Overall Layout**  \n- **Header**: Top navigation bar with menu items (Home, Services, etc.) and a “Get Free Consultation” button.  \n- **Hero Section**: Title “Website Pricing & Packages” with a subheading, followed by 5 trust badges (100% Responsive, SEO Optimized, etc.).  \n- **Main Content**: Sidebar (left) + 6 pricing cards (center) in a grid.  \n- **CTA Section**: Dark blue banner (“Not Sure Which Package is Right for You?”) with two buttons (“Get Free Consultation,” “Chat on WhatsApp”).  \n- **Trust Badges**: 4 icons (No Hidden Charges, Money Back Guarantee, etc.) below the CTA.  \n- **Footer**: Dark blue with company info, quick links, services, contact details, and social media icons.  \n\n\nThe layout is clean, responsive, and uses visual hierarchy (purple accents, bold prices) to guide users toward key actions (e.g., selecting the “Popular” E-Commerce package or requesting a consultation).",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1784189376,
+  "id": "20260716160900393a7283631d4191",
+  "model": "glm-4.6v",
+  "object": "chat.completion",
+  "request_id": "20260716160900393a7283631d4191",
+  "usage": {
+    "completion_tokens": 683,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 2081,
+    "prompt_tokens_details": {
+      "cached_tokens": 4
+    },
+    "total_tokens": 2764
+  }
+}

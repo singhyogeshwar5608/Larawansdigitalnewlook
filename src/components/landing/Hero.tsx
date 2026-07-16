@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight, TrendingUp, Users, FolderCheck, CheckCircle } from 'lucide-react';
+import Link from 'next/link';
 
 const avatarColors = ['#6C4CFF', '#EC4899', '#F59E0B', '#10B981', '#3B82F6'];
 
@@ -43,22 +44,22 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-6 sm:mb-8"
             >
-              <a
-                href="#"
+              <Link
+                href="/contact"
                 className="inline-flex items-center justify-center gap-2 text-sm sm:text-base font-semibold text-white bg-[#6C4CFF] hover:bg-[#5B3DE6] px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg transition-all duration-200 hover:shadow-[0_6px_20px_rgba(108,76,255,0.4)]"
               >
                 Book Free Strategy Call
                 <ArrowRight size={16} className="sm:hidden" />
                 <ArrowRight size={18} className="hidden sm:block" />
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href="/portfolio"
                 className="inline-flex items-center justify-center gap-2 text-sm sm:text-base font-semibold text-[#6C4CFF] bg-white hover:bg-[#6C4CFF]/5 px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg border border-[#6C4CFF]/20 transition-all duration-200"
               >
                 View Our Work
                 <ArrowRight size={16} className="sm:hidden" />
                 <ArrowRight size={18} className="hidden sm:block" />
-              </a>
+              </Link>
             </motion.div>
 
             {/* Avatar Review Row */}

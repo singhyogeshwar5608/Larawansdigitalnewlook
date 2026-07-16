@@ -6,13 +6,11 @@ import Link from 'next/link';
 
 const navLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Services', href: '/#services' },
-  { label: 'Portfolio', href: '/#portfolio' },
+  { label: 'Services', href: '/services' },
+  { label: 'Portfolio', href: '/portfolio' },
   { label: 'Pricing', href: '/pricing' },
-  { label: 'Industries', href: '#' },
-  { label: 'About Us', href: '#' },
-  { label: 'Blogs', href: '#' },
-  { label: 'Contact', href: '#' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export default function Header({
@@ -67,13 +65,13 @@ export default function Header({
 
         {/* CTA Button */}
         <div className="hidden lg:flex items-center gap-4">
-          <a
-            href="#"
+          <Link
+            href="/contact"
             className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-[#6C4CFF] hover:bg-[#5B3DE6] px-5 py-2.5 rounded-lg transition-all duration-200 hover:shadow-[0_4px_15px_rgba(108,76,255,0.4)]"
           >
             Get Free Consultation
             <ArrowRight size={16} />
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -102,13 +100,13 @@ export default function Header({
                 {link.label}
               </Link>
             ))}
-            <a
-              href="#"
+            <Link
+              href="/contact"
               className="mt-4 w-full inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-[#6C4CFF] hover:bg-[#5B3DE6] px-5 py-2.5 rounded-lg transition-all duration-200"
             >
               Get Free Consultation
               <ArrowRight size={16} />
-            </a>
+            </Link>
           </div>
         </div>
       )}

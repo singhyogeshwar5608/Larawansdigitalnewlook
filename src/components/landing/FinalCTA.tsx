@@ -1,6 +1,7 @@
 'use client';
 
 import { ArrowRight, MessageCircle } from 'lucide-react';
+import Link from 'next/link';
 
 export default function FinalCTA() {
   return (
@@ -18,22 +19,22 @@ export default function FinalCTA() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4">
-          <a
-            href="#"
+          <Link
+            href="/contact"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm sm:text-base font-semibold text-white bg-[#6C4CFF] hover:bg-[#5B3DE6] px-6 sm:px-7 py-3 sm:py-3.5 rounded-lg transition-all duration-200 hover:shadow-[0_6px_20px_rgba(108,76,255,0.4)]"
           >
             Get Free Consultation
             <ArrowRight size={16} className="sm:hidden" />
             <ArrowRight size={18} className="hidden sm:block" />
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/contact"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm sm:text-base font-semibold text-[#6C4CFF] bg-white hover:bg-gray-50 px-6 sm:px-7 py-3 sm:py-3.5 rounded-lg transition-all duration-200"
           >
             <MessageCircle size={16} className="sm:hidden" />
             <MessageCircle size={18} className="hidden sm:block" />
             Chat On WhatsApp
-          </a>
+          </Link>
         </div>
       </div>
     </section>

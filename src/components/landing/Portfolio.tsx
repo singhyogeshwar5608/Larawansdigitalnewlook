@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
 
 const categories = ['All', 'Websites', 'Mobile Apps', 'Branding', 'SEO', 'Marketing'];
 
@@ -34,9 +35,9 @@ export default function Portfolio() {
               Work That Speaks For Itself
             </h2>
           </div>
-          <a href="#" className="inline-flex items-center gap-1 text-sm font-semibold text-[#6C4CFF] hover:gap-2 transition-all duration-300 mt-3 sm:mt-0">
+          <Link href="/portfolio" className="inline-flex items-center gap-1 text-sm font-semibold text-[#6C4CFF] hover:gap-2 transition-all duration-300 mt-3 sm:mt-0">
             View All Projects <ArrowRight size={14} />
-          </a>
+          </Link>
         </div>
 
         {/* Filter Tabs - horizontal scroll on mobile */}

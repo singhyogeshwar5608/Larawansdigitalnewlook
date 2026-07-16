@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Globe, Smartphone, Megaphone, Palette, Search, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const services = [
   {
@@ -77,19 +78,19 @@ export default function Services() {
               </div>
               <h3 className="text-sm sm:text-base font-bold text-[#1a1a2e] mb-1.5 sm:mb-2 leading-tight">{service.title}</h3>
               <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed mb-3 sm:mb-4 flex-1 hidden sm:block">{service.description}</p>
-              <div className="flex items-center gap-1 text-xs sm:text-sm font-semibold text-[#6C4CFF] group-hover:gap-2 transition-all duration-300 mt-auto">
+              <Link href="/services" className="flex items-center gap-1 text-xs sm:text-sm font-semibold text-[#6C4CFF] group-hover:gap-2 transition-all duration-300 mt-auto">
                 Learn More <ArrowRight size={12} className="sm:hidden" />
                 <ArrowRight size={14} className="hidden sm:block" />
-              </div>
+              </Link>
             </motion.div>
           ))}
         </div>
 
         {/* View All Link */}
         <div className="text-right mt-6 sm:mt-8 px-1">
-          <a href="#" className="inline-flex items-center gap-1 text-sm font-semibold text-[#6C4CFF] hover:gap-2 transition-all duration-300">
+          <Link href="/services" className="inline-flex items-center gap-1 text-sm font-semibold text-[#6C4CFF] hover:gap-2 transition-all duration-300">
             View All Services <ArrowRight size={14} />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

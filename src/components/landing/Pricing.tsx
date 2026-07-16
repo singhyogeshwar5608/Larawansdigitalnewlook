@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import { Check, Zap, Shield, Clock, Headphones, ChevronLeft, ChevronRight } from 'lucide-react';
+import Link from 'next/link';
 
 const plans = [
   {
@@ -126,8 +127,8 @@ export default function Pricing() {
                 <span className="text-white/50 text-xs sm:text-sm">{plan.period}</span>
               </div>
 
-              <a
-                href="#"
+              <Link
+                href="/contact"
                 className={`block text-center py-2.5 sm:py-3 rounded-lg font-semibold text-xs sm:text-sm transition-all duration-200 mb-4 sm:mb-6 ${
                   plan.highlighted
                     ? 'bg-[#6C4CFF] text-white hover:bg-[#5B3DE6] hover:shadow-[0_4px_15px_rgba(108,76,255,0.4)]'
@@ -135,7 +136,7 @@ export default function Pricing() {
                 }`}
               >
                 Get Started
-              </a>
+              </Link>
 
               <ul className="space-y-2.5 sm:space-y-3">
                 {plan.features.map((feature) => (

@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Header from '@/components/landing/Header';
-import ServicesBanner from '@/components/landing/ServicesBanner';
 import {
   Globe, Smartphone, Megaphone, Palette, Search, ArrowRight,
   Code2, Database, Shield, Zap, BarChart3, Users, Layers,
@@ -105,9 +104,6 @@ export default function ServicesPage() {
           </motion.p>
         </div>
       </section>
-
-      {/* Professional Banner - Female Touch */}
-      <ServicesBanner />
 
       {/* Services Detail */}
       <section className="py-14 md:py-20 bg-white">

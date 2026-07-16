@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "Here are the 5 most important visual differences between the two hero sections:  \n\n1. **Background Color & Layout**  \n   - *Reference*: Light gray background with a structured, multi - section layout (analytics, mobile mockup, client logos).  \n   - *Current*: Light purple gradient background with a simplified, single - column layout (no separate analytics panel or mobile mockup section).  \n\n2. **Mobile Mockup Design**  \n   - *Reference*: White - bordered phone mockup with a bar chart, “View Report” button, and “Larawans Digital” branding.  \n   - *Current*: Dark - bordered phone mockup with a solid purple screen, “75% Growth Rate” text, and a “View Report” button.  \n\n3. **Client Logo Presentation**  \n   - *Reference*: Colorful, prominent client logos (Patanjali, Havells, etc.) in a row below the hero text.  \n   - *Current*: Gray, faded client logos in a row below the hero text (less vibrant and prominent).  \n\n4. **Call - to - Action (CTA) Buttons**  \n   - *Reference*: Two buttons: “Book Free Strategy Call” (purple) and “View Our Work” (white with purple text).  \n   - *Current*: Two buttons: “Book Free Strategy Call” (purple) and “View Our Work” (white with purple text) — but the “View Our Work” button has a different border style (more rounded).  \n\n5. **Review Section**  \n   - *Reference*: Star - rating (4.9) with 5 small profile avatars (e.g., JD, AS, RK, PM, VL) and “120+ Reviews” text.  \n   - *Current*: Star - rating (4.9) with 5 colored circular icons (matching the avatars’ colors) and “120+ Reviews” text — the avatars are replaced with colored circles.",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1784187244,
+  "id": "20260716153345c2ff0d2c38be46c8",
+  "model": "glm-4.6v",
+  "object": "chat.completion",
+  "request_id": "20260716153345c2ff0d2c38be46c8",
+  "usage": {
+    "completion_tokens": 408,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 4757,
+    "prompt_tokens_details": {
+      "cached_tokens": 4
+    },
+    "total_tokens": 5165
+  }
+}

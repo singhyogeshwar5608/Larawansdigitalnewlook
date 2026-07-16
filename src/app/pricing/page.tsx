@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import PricingHeader from '@/components/pricing/PricingHeader';
+import Header from '@/components/landing/Header';
 import PricingHero from '@/components/pricing/PricingHero';
 import Sidebar, { categories } from '@/components/pricing/Sidebar';
 import PricingCard from '@/components/pricing/PricingCard';
@@ -148,7 +148,7 @@ export default function PricingPage() {
 
   return (
     <div className="min-h-screen bg-[#FAFBFF]" style={{ fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif' }}>
-      <PricingHeader />
+      <Header activePage="Pricing" />
       <PricingHero />
 
       {/* Main Content: Sidebar + Grid */}

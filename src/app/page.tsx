@@ -1,8 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, ArrowRight, MessageCircle } from 'lucide-react';
 import Header from '@/components/landing/Header';
 import Hero from '@/components/landing/Hero';
 import TrustedBrands from '@/components/landing/TrustedBrands';
@@ -35,20 +33,9 @@ function AnimatedSection({ children, className = '' }: { children: React.ReactNo
 }
 
 export default function Home() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <div className="min-h-screen bg-white" style={{ fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif' }}>
-      <Header scrolled={scrolled} mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
+      <Header activePage="Home" />
       <AnimatedSection><Hero /></AnimatedSection>
       <AnimatedSection><TrustedBrands /></AnimatedSection>
       <AnimatedSection><Services /></AnimatedSection>

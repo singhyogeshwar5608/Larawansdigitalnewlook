@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "To determine the answer, we analyze the provided image: the image shows project cards (e.g., “Real Estate Portal,” “SEO Campaign”) arranged vertically, but there is no connecting line on the left. Thus, the process timeline is not displayed as a vertical list with a connecting line on the left. \n\nno",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1784188800,
+  "id": "202607161559569d35244b7fef4c47",
+  "model": "glm-4.6v",
+  "object": "chat.completion",
+  "request_id": "202607161559569d35244b7fef4c47",
+  "usage": {
+    "completion_tokens": 67,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 3814,
+    "prompt_tokens_details": {
+      "cached_tokens": 4
+    },
+    "total_tokens": 3881
+  }
+}

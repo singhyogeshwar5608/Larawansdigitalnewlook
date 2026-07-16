@@ -5,6 +5,7 @@ import Header from '@/components/landing/Header';
 import Hero from '@/components/landing/Hero';
 import TrustedBrands from '@/components/landing/TrustedBrands';
 import Services from '@/components/landing/Services';
+import ServicesBanner from '@/components/landing/ServicesBanner';
 import StatsBanner from '@/components/landing/StatsBanner';
 import Portfolio from '@/components/landing/Portfolio';
 import VideoReels from '@/components/landing/VideoReels';
@@ -39,6 +40,7 @@ export default function Home() {
       <AnimatedSection><Hero /></AnimatedSection>
       <AnimatedSection><TrustedBrands /></AnimatedSection>
       <AnimatedSection><Services /></AnimatedSection>
+      <AnimatedSection><ServicesBanner /></AnimatedSection>
       <AnimatedSection><StatsBanner /></AnimatedSection>
       <AnimatedSection><Portfolio /></AnimatedSection>
       <AnimatedSection><VideoReels /></AnimatedSection>

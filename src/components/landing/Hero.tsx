@@ -8,10 +8,11 @@ const avatarColors = ['#6C4CFF', '#EC4899', '#F59E0B', '#10B981', '#3B82F6'];
 
 export default function Hero() {
   return (
-    <section className="relative pt-[70px] overflow-hidden" style={{ background: 'linear-gradient(180deg, #F0F0FF 0%, #F7FAFC 60%, #FFFFFF 100%)' }}>
+    <section className="relative pt-[70px] overflow-hidden" style={{ background: 'linear-gradient(180deg, #F0EDFF 0%, #F7F5FF 40%, #FAFBFF 100%)' }}>
       {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-[#6C4CFF]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-10 right-20 w-96 h-96 bg-[#8B5CFF]/5 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-[#6C4CFF]/8 rounded-full blur-3xl" />
+      <div className="absolute bottom-10 right-20 w-96 h-96 bg-[#8B5CFF]/8 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#C4B5FD]/5 rounded-full blur-[120px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-14 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">

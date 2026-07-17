@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import Header from '@/components/landing/Header';
 import {
   ArrowRight, Mail, Phone, MapPin, Clock, MessageCircle,
@@ -50,10 +51,36 @@ const faqs = [
   { question: 'What technologies do you use?', answer: 'We work with modern technologies including React, Next.js, Node.js, Python, React Native, Flutter, and more. We choose the best tech stack based on your project requirements.' },
 ];
 
-export default function ContactPage() {
+export default function ContactPageWrapper() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-white flex items-center justify-center"><div className="w-8 h-8 border-3 border-[#6C4CFF] border-t-transparent rounded-full animate-spin" /></div>}>
+      <ContactPage />
+    </Suspense>
+  );
+}
+
+function ContactPage() {
+  const searchParams = useSearchParams();
+  const packageFromPricing = searchParams.get('package') || '';
+
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '', budget: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (packageFromPricing) {
+      setFormData((prev) => ({
+        ...prev,
+        service: packageFromPricing.includes('E-Commerce') ? 'E-Commerce Website' :
+                packageFromPricing.includes('Portfolio') ? 'Portfolio Website' :
+                packageFromPricing.includes('School') || packageFromPricing.includes('College') ? 'Website Development' :
+                packageFromPricing.includes('Hospital') || packageFromPricing.includes('Clinic') ? 'Website Development' :
+                packageFromPricing.includes('Custom') ? 'Custom Web Application' :
+                'Website Development',
+        message: `Hi, I'm interested in the ${packageFromPricing} package. Please share more details and pricing information.`,
+      }));
+    }
+  }, [packageFromPricing]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -89,16 +116,24 @@ export default function ContactPage() {
       <section className="py-14 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-14 md:mb-20">
-            {contactInfo.map((info) => (
-              <div key={info.title} className="bg-[#FAFBFF] rounded-xl p-5 sm:p-6 border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 text-center">
-                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4" style={{ backgroundColor: `${info.color}15` }}>
-                  <info.icon size={20} style={{ color: info.color }} />
-                </div>
-                <h3 className="text-sm sm:text-base font-bold text-[#1a1a2e] mb-1">{info.title}</h3>
-                <p className="text-xs sm:text-sm font-semibold text-[#6C4CFF] mb-1">{info.value}</p>
-                <p className="text-[10px] sm:text-xs text-[#94A3B8]">{info.description}</p>
-              </div>
-            ))}
+            {contactInfo.map((info) => {
+              const href = info.title === 'Email Us' ? `mailto:${info.value}`
+                : info.title === 'Call Us' ? `tel:${info.value.replace(/\s/g, '')}`
+                : info.title === 'WhatsApp' ? `https://wa.me/919876543210?text=Hi, I'd like to discuss a project.`
+                : 'https://maps.google.com/?q=New+Delhi,India';
+              const isExternal = info.title === 'WhatsApp' || info.title === 'Visit Us';
+              return (
+                <a key={info.title} href={href} target={isExternal ? '_blank' : undefined} rel={isExternal ? 'noopener noreferrer' : undefined}
+                  className="block bg-[#FAFBFF] rounded-xl p-5 sm:p-6 border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 text-center cursor-pointer">
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4" style={{ backgroundColor: `${info.color}15` }}>
+                    <info.icon size={20} style={{ color: info.color }} />
+                  </div>
+                  <h3 className="text-sm sm:text-base font-bold text-[#1a1a2e] mb-1">{info.title}</h3>
+                  <p className="text-xs sm:text-sm font-semibold text-[#6C4CFF] mb-1">{info.value}</p>
+                  <p className="text-[10px] sm:text-xs text-[#94A3B8]">{info.description}</p>
+                </a>
+              );
+            })}
           </div>
 
           {/* Form + Map */}

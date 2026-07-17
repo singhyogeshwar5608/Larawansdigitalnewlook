@@ -2,10 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight, MessageCircle } from 'lucide-react';
+import Link from 'next/link';
 
 export default function CTABanner() {
   return (
-    <section className="py-14 sm:py-16 md:py-20" style={{ background: 'linear-gradient(135deg, #070B2B 0%, #101B5A 50%, #1A1443 100%)' }}>
+    <section className="py-14 sm:py-16 md:py-20 relative" style={{ background: 'linear-gradient(135deg, #070B2B 0%, #101B5A 50%, #1A1443 100%)' }}>
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#6C4CFF]/10 rounded-full blur-[150px]" />
       </div>
@@ -27,15 +28,17 @@ export default function CTABanner() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4">
-            <a
-              href="#"
+            <Link
+              href="/contact"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm sm:text-base font-semibold text-white bg-[#6C4CFF] hover:bg-[#5B3DE6] px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl transition-all duration-300 hover:shadow-[0_6px_20px_rgba(108,76,255,0.4)]"
             >
               Get Free Consultation
               <ArrowRight size={16} />
-            </a>
+            </Link>
             <a
-              href="#"
+              href="https://wa.me/919876543210?text=Hi, I need help choosing the right website package for my business. Can we discuss?"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm sm:text-base font-semibold text-[#6C4CFF] bg-white hover:bg-gray-50 px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl transition-all duration-300"
             >
               <MessageCircle size={16} />

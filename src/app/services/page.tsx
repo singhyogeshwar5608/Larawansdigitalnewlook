@@ -8,6 +8,8 @@ import {
   Globe, Smartphone, Megaphone, Palette, Search, ArrowRight,
   Code2, CheckCircle, ArrowUpRight, Sparkles, Rocket, Target, Lightbulb, Shield
 } from 'lucide-react';
+import { HiRocketLaunch, HiLightBulb, HiShieldCheck } from 'react-icons/hi2';
+import { TbTarget } from 'react-icons/tb';
 
 /* Custom SVG Icons for Service Cards */
 const ServiceIconWeb = ({ color }: { color: string }) => (
@@ -117,10 +119,10 @@ const services = [
 ];
 
 const highlights = [
-  { icon: Target, title: 'Result-Driven', desc: 'Every project is optimized for measurable outcomes and business growth.' },
-  { icon: Rocket, title: 'Fast Delivery', desc: 'We deliver projects on time with our streamlined development process.' },
-  { icon: Lightbulb, title: 'Innovative Solutions', desc: 'Creative approaches backed by the latest technologies and trends.' },
-  { icon: Shield, title: 'Secure & Reliable', desc: 'Enterprise-grade security and 99.9% uptime guaranteed.' },
+  { icon: TbTarget, title: 'Result-Driven', desc: 'Every project is optimized for measurable outcomes and business growth.', color: '#6C4CFF' },
+  { icon: HiRocketLaunch, title: 'Fast Delivery', desc: 'We deliver projects on time with our streamlined development process.', color: '#3B82F6' },
+  { icon: HiLightBulb, title: 'Innovative Solutions', desc: 'Creative approaches backed by the latest technologies and trends.', color: '#F59E0B' },
+  { icon: HiShieldCheck, title: 'Secure & Reliable', desc: 'Enterprise-grade security and 99.9% uptime guaranteed.', color: '#10B981' },
 ];
 
 const technologies = [
@@ -344,24 +346,32 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Highlights Bar */}
-      <section className="relative py-8 sm:py-10 border-y border-white/5" style={{ background: '#0a0e27' }}>
+      {/* Highlights Bar - Light Theme */}
+      <section className="relative py-10 sm:py-12 md:py-14" style={{ background: '#F5F3FF' }}>
+        {/* Subtle top/bottom borders with gradient */}
+        <div className="absolute inset-x-0 top-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, #6C4CFF/20, transparent)' }} />
+        <div className="absolute inset-x-0 bottom-0 h-px" style={{ background: 'linear-gradient(90deg, transparent, #6C4CFF/20, transparent)' }} />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
             {highlights.map((item, i) => (
               <motion.div key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="flex items-center gap-3 sm:gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#6C4CFF]/15 flex items-center justify-center shrink-0">
-                  <item.icon size={18} className="sm:hidden text-[#8B5CFF]" />
-                  <item.icon size={20} className="hidden sm:block text-[#8B5CFF]" />
-                </div>
-                <div className="min-w-0">
-                  <p className="text-xs sm:text-sm font-bold text-white truncate">{item.title}</p>
-                  <p className="text-[10px] sm:text-xs text-white/40 leading-snug line-clamp-2">{item.desc}</p>
+                className="group relative bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 md:p-6 border border-gray-100 hover:border-gray-200 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex flex-col items-center text-center gap-2.5 sm:gap-3">
+                  {/* Icon */}
+                  <div className="w-11 h-11 sm:w-13 sm:h-13 md:w-14 md:h-14 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+                    style={{ backgroundColor: `${item.color}10` }}>
+                    <item.icon className="text-xl sm:text-2xl md:text-3xl transition-colors duration-300" style={{ color: item.color }} />
+                  </div>
+                  {/* Text */}
+                  <div>
+                    <p className="text-xs sm:text-sm md:text-base font-bold text-gray-900 mb-0.5 sm:mb-1">{item.title}</p>
+                    <p className="text-[10px] sm:text-xs text-gray-500 leading-relaxed">{item.desc}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}

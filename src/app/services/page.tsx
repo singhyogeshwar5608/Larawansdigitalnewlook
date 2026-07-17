@@ -9,6 +9,67 @@ import {
   Code2, CheckCircle, ArrowUpRight, Sparkles, Rocket, Target, Lightbulb, Shield
 } from 'lucide-react';
 
+/* Custom SVG Icons for Service Cards */
+const ServiceIconWeb = ({ color }: { color: string }) => (
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="3" y="5" width="22" height="16" rx="2" stroke={color} strokeWidth="1.8"/>
+    <path d="M8 25h12M14 21v4" stroke={color} strokeWidth="1.8" strokeLinecap="round"/>
+    <path d="M8 9h4l2 3-2 3H8l-2-3 2-3z" fill={color} fillOpacity="0.2" stroke={color} strokeWidth="1.2"/>
+    <circle cx="18" cy="12" r="2" stroke={color} strokeWidth="1.2"/>
+    <path d="M16 16h8M16 19h5" stroke={color} strokeWidth="1.2" strokeLinecap="round"/>
+  </svg>
+);
+
+const ServiceIconApp = ({ color }: { color: string }) => (
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="8" y="2" width="12" height="24" rx="3" stroke={color} strokeWidth="1.8"/>
+    <path d="M12 22h4M14 5.5v0" stroke={color} strokeWidth="1.8" strokeLinecap="round"/>
+    <path d="M11 11l2 2 4-4" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <rect x="10" y="8" width="8" height="10" rx="1" stroke={color} strokeWidth="1" strokeDasharray="2 2"/>
+  </svg>
+);
+
+const ServiceIconMarketing = ({ color }: { color: string }) => (
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 24l4-8 5 3 5-11 6 4" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+    <circle cx="8" cy="16" r="2" fill={color} fillOpacity="0.3"/>
+    <circle cx="13" cy="19" r="2" fill={color} fillOpacity="0.3"/>
+    <circle cx="18" cy="8" r="2" fill={color} fillOpacity="0.3"/>
+    <circle cx="24" cy="12" r="2" fill={color} fillOpacity="0.3"/>
+    <path d="M2 24h24" stroke={color} strokeWidth="1.5" strokeLinecap="round"/>
+    <path d="M2 20h3M20 20h6M2 16h2M22 16h4" stroke={color} strokeWidth="1" strokeLinecap="round" opacity="0.4"/>
+  </svg>
+);
+
+const ServiceIconBrand = ({ color }: { color: string }) => (
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M14 3L26 9v10l-12 6L2 19V9l12-6z" stroke={color} strokeWidth="1.8" strokeLinejoin="round"/>
+    <path d="M14 3v24M2 9l12 6 12-6" stroke={color} strokeWidth="1.2" opacity="0.5"/>
+    <circle cx="14" cy="14" r="3" fill={color} fillOpacity="0.2" stroke={color} strokeWidth="1.2"/>
+    <path d="M14 11v6M11 14h6" stroke={color} strokeWidth="1" strokeLinecap="round"/>
+  </svg>
+);
+
+const ServiceIconSEO = ({ color }: { color: string }) => (
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12" r="8" stroke={color} strokeWidth="1.8"/>
+    <path d="M18 18l7 7" stroke={color} strokeWidth="2.5" strokeLinecap="round"/>
+    <path d="M9 10h6M12 7v6" stroke={color} strokeWidth="1.5" strokeLinecap="round"/>
+    <path d="M8 15l3 2 5-5" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const ServiceIconCustom = ({ color }: { color: string }) => (
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4 6h8l4 4-4 4H4V6z" fill={color} fillOpacity="0.15" stroke={color} strokeWidth="1.5"/>
+    <path d="M16 6h8l4 4-4 4h-8V6z" fill={color} fillOpacity="0.1" stroke={color} strokeWidth="1.5"/>
+    <path d="M10 14h8l4 4-4 4h-8V14z" fill={color} fillOpacity="0.2" stroke={color} strokeWidth="1.5"/>
+    <path d="M8 9h4M10 7.5v3" stroke={color} strokeWidth="1" strokeLinecap="round"/>
+    <path d="M20 9h2M21 8v2" stroke={color} strokeWidth="1" strokeLinecap="round"/>
+    <path d="M14 17h2M15 16v2" stroke={color} strokeWidth="1" strokeLinecap="round"/>
+  </svg>
+);
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
@@ -24,32 +85,32 @@ function AnimatedSection({ children, className = '' }: { children: React.ReactNo
 
 const services = [
   {
-    icon: Globe, title: 'Website Development', color: '#6C4CFF',
+    icon: ServiceIconWeb, title: 'Website Development', color: '#6C4CFF',
     description: 'Custom, responsive websites built with modern technologies to convert visitors into customers.',
     features: ['Custom UI/UX Design', 'Responsive on All Devices', 'Fast Loading Speed', 'SEO Optimized', 'CMS Integration', 'Analytics Setup'],
   },
   {
-    icon: Smartphone, title: 'Mobile App Development', color: '#EC4899',
+    icon: ServiceIconApp, title: 'Mobile App Development', color: '#EC4899',
     description: 'Native and cross-platform mobile apps delivering seamless user experiences on iOS and Android.',
     features: ['iOS & Android Apps', 'React Native / Flutter', 'Push Notifications', 'Offline Support', 'App Store Optimization', 'In-App Purchases'],
   },
   {
-    icon: Megaphone, title: 'Digital Marketing', color: '#3B82F6',
+    icon: ServiceIconMarketing, title: 'Digital Marketing', color: '#3B82F6',
     description: 'Data-driven marketing strategies including PPC, social media, and content marketing to grow your business.',
     features: ['Google & Meta Ads', 'Social Media Management', 'Content Marketing', 'Email Campaigns', 'Conversion Optimization', 'ROI Tracking'],
   },
   {
-    icon: Palette, title: 'Brand Identity & Design', color: '#F59E0B',
+    icon: ServiceIconBrand, title: 'Brand Identity & Design', color: '#F59E0B',
     description: 'Complete branding solutions including logo design, brand guidelines, and visual identity systems.',
     features: ['Logo Design', 'Brand Guidelines', 'Social Media Kits', 'Business Cards', 'Presentation Design', 'Brand Strategy'],
   },
   {
-    icon: Search, title: 'SEO & Digital Growth', color: '#10B981',
+    icon: ServiceIconSEO, title: 'SEO & Digital Growth', color: '#10B981',
     description: 'Comprehensive SEO strategies to boost organic visibility, drive qualified traffic, and increase conversions.',
     features: ['Technical SEO Audit', 'Keyword Research', 'On-Page Optimization', 'Link Building', 'Local SEO', 'Monthly Reports'],
   },
   {
-    icon: Code2, title: 'Custom Web Applications', color: '#8B5CF6',
+    icon: ServiceIconCustom, title: 'Custom Web Applications', color: '#8B5CF6',
     description: 'Full-stack web applications tailored to your unique business requirements with scalable architecture.',
     features: ['Custom Dashboards', 'API Development', 'Database Design', 'User Authentication', 'Third-Party Integrations', 'Cloud Deployment'],
   },
@@ -247,42 +308,72 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services Detail */}
+      {/* Services Grid */}
       <section className="py-14 md:py-20 relative">
         <div className="absolute top-0 right-0 w-80 h-80 bg-[#6C4CFF]/5 rounded-full blur-[150px]" />
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#8B5CFF]/5 rounded-full blur-[120px]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          <div className="space-y-12 sm:space-y-16 md:space-y-24">
-            {services.map((service, index) => (
-              <AnimatedSection key={service.title}>
-                <div className={`grid lg:grid-cols-2 gap-6 lg:gap-12 xl:gap-16 items-center`}>
-                  <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center mb-4 sm:mb-5"
-                      style={{ backgroundColor: `${service.color}20`, boxShadow: `0 0 30px ${service.color}15` }}>
-                      <service.icon size={24} style={{ color: service.color }} />
+          {/* Section Header */}
+          <div className="text-center mb-10 sm:mb-14">
+            <p className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-[#8B5CFF] mb-2 sm:mb-3">What We Offer</p>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4">Our Core Services</h2>
+            <p className="text-sm sm:text-base text-white/40 max-w-xl mx-auto">End-to-end digital solutions crafted to elevate your brand and accelerate business growth.</p>
+          </div>
+
+          {/* Cards Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+            {services.map((service, i) => (
+              <motion.div key={service.title}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="group relative bg-white/[0.04] backdrop-blur-md rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-7 border border-white/[0.08] hover:border-white/[0.18] hover:bg-white/[0.07] transition-all duration-400 cursor-default">
+                {/* Gradient glow on hover */}
+                <div className="absolute inset-0 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  style={{ background: `radial-gradient(300px circle at 50% 0%, ${service.color}12, transparent 70%)` }} />
+
+                <div className="relative z-10">
+                  {/* Icon + Number row */}
+                  <div className="flex items-start justify-between mb-4 sm:mb-5">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center transition-all duration-300"
+                      style={{ backgroundColor: `${service.color}15`, boxShadow: `0 0 25px ${service.color}10` }}>
+                      <service.icon color={service.color} />
                     </div>
-                    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 leading-tight">{service.title}</h2>
-                    <p className="text-xs sm:text-sm md:text-base text-white/50 leading-relaxed mb-5 sm:mb-6">{service.description}</p>
-                    <Link href="/contact"
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:gap-3 transition-all duration-300 group">
-                      <span style={{ color: service.color }}>Get Started</span>
-                      <ArrowRight size={16} style={{ color: service.color }} className="group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                    <span className="text-3xl sm:text-4xl font-black text-white/[0.04] group-hover:text-white/[0.08] transition-colors select-none leading-none mt-1">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
                   </div>
-                  <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                    <div className="grid grid-cols-2 gap-2.5 sm:gap-3 md:gap-4">
-                      {service.features.map((feature, i) => (
-                        <motion.div key={i} whileHover={{ y: -3 }}
-                          className="bg-white/5 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white/10 hover:border-white/20 hover:bg-white/10 transition-all duration-300 group cursor-default">
-                          <CheckCircle size={14} className="sm:hidden mb-1.5" style={{ color: service.color }} />
-                          <CheckCircle size={16} className="hidden sm:block mb-2" style={{ color: service.color }} />
-                          <p className="text-[11px] sm:text-xs md:text-sm font-medium text-white/80 group-hover:text-white transition-colors">{feature}</p>
-                        </motion.div>
-                      ))}
-                    </div>
+
+                  {/* Title */}
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-white mb-2 sm:mb-2.5 leading-tight">{service.title}</h3>
+
+                  {/* Description */}
+                  <p className="text-xs sm:text-sm text-white/40 leading-relaxed mb-4 sm:mb-5">{service.description}</p>
+
+                  {/* Features */}
+                  <div className="space-y-2 sm:space-y-2.5 mb-5 sm:mb-6">
+                    {service.features.map((feature, fi) => (
+                      <div key={fi} className="flex items-center gap-2.5">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0">
+                          <circle cx="7" cy="7" r="7" fill={service.color} fillOpacity="0.12"/>
+                          <path d="M4.5 7.2l1.6 1.6 3.4-3.4" stroke={service.color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                        <span className="text-[11px] sm:text-xs text-white/55 group-hover:text-white/70 transition-colors">{feature}</span>
+                      </div>
+                    ))}
                   </div>
+
+                  {/* Get Started Link */}
+                  <Link href="/contact"
+                    className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold transition-all duration-300 group/link">
+                    <span style={{ color: service.color }}>Get Started</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="group-hover/link:translate-x-1 transition-transform">
+                      <path d="M3 8h10M9 4l4 4-4 4" stroke={service.color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </Link>
                 </div>
-              </AnimatedSection>
+              </motion.div>
             ))}
           </div>
         </div>

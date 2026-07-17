@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/landing/Header';
 import {
   Globe, Smartphone, Megaphone, Palette, Search, ArrowRight,
@@ -81,39 +82,143 @@ export default function ServicesPage() {
     <div className="min-h-screen" style={{ fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif', background: '#070B2B' }}>
       <Header activePage="Services" />
 
-      {/* Hero - Dark */}
-      <section className="pt-[70px] relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #070B2B 0%, #101B5A 50%, #1A1443 100%)' }}>
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#6C4CFF]/15 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 right-20 w-96 h-96 bg-[#8B5CFF]/15 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#6C4CFF]/5 rounded-full blur-[150px]" />
+      {/* Hero - Dark with Female Image */}
+      <section className="pt-[70px] relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #070B2B 0%, #0d1240 30%, #101B5A 60%, #1A1443 100%)' }}>
+        {/* Background Glows */}
+        <div className="absolute top-10 left-0 w-72 h-72 bg-[#6C4CFF]/20 rounded-full blur-[100px]" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#8B5CFF]/15 rounded-full blur-[120px]" />
+        <div className="absolute top-1/2 left-1/3 w-[500px] h-[500px] bg-[#6C4CFF]/5 rounded-full blur-[150px]" />
+        {/* Decorative Dots */}
+        <div className="absolute top-32 left-8 sm:left-16 w-2 h-2 bg-[#8B5CFF]/40 rounded-full" />
+        <div className="absolute top-48 left-24 sm:left-40 w-1.5 h-1.5 bg-[#A78BFA]/30 rounded-full" />
+        <div className="absolute bottom-40 left-12 sm:left-28 w-1 h-1 bg-[#C4B5FD]/40 rounded-full" />
+        <div className="absolute top-24 right-16 sm:right-32 w-2.5 h-2.5 bg-[#6C4CFF]/30 rounded-full" />
+        <div className="absolute bottom-60 right-10 sm:right-20 w-1.5 h-1.5 bg-[#A78BFA]/25 rounded-full" />
 
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-28 text-center relative z-10">
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
-            className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-[#8B5CFF] mb-3 sm:mb-4">
-            Our Services
-          </motion.p>
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-            Solutions That Drive{' '}
-            <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(90deg, #6C4CFF, #A78BFA, #C4B5FD)' }}>
-              Real Results
-            </span>
-          </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-sm sm:text-base md:text-lg text-white/60 max-w-2xl mx-auto px-2 mb-8 sm:mb-10">
-            We offer a comprehensive suite of digital services designed to help your business thrive. From concept to launch, we have got you covered.
-          </motion.p>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4">
-            <Link href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm sm:text-base font-semibold text-white bg-[#6C4CFF] hover:bg-[#5B3DE6] px-6 sm:px-7 py-3 sm:py-3.5 rounded-lg transition-all duration-200 hover:shadow-[0_6px_20px_rgba(108,76,255,0.4)]">
-              Get Free Consultation <ArrowRight size={18} />
-            </Link>
-            <Link href="/pricing"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm sm:text-base font-semibold text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm px-6 sm:px-7 py-3 sm:py-3.5 rounded-lg border border-white/20 transition-all duration-200">
-              View Pricing <ArrowRight size={18} />
-            </Link>
-          </motion.div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24 relative z-10">
+          <div className="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-12 xl:gap-16">
+            {/* Text Content */}
+            <div className="flex-1 text-center lg:text-left w-full">
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+                <span className="inline-flex items-center gap-2 bg-[#6C4CFF]/15 backdrop-blur-sm border border-[#6C4CFF]/25 rounded-full px-4 py-1.5 mb-5 sm:mb-6">
+                  <Sparkles size={14} className="text-[#A78BFA]" />
+                  <span className="text-[10px] sm:text-xs font-semibold tracking-[0.15em] uppercase text-[#A78BFA]">Our Services</span>
+                </span>
+              </motion.div>
+
+              <motion.h1 initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-bold text-white mb-4 sm:mb-5 lg:mb-6 leading-[1.15]">
+                Solutions That Drive{' '}
+                <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(90deg, #6C4CFF, #A78BFA, #C4B5FD)' }}>
+                  Real Results
+                </span>
+              </motion.h1>
+
+              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-sm sm:text-base md:text-lg text-white/55 max-w-xl mx-auto lg:mx-0 mb-7 sm:mb-8 lg:mb-10 leading-relaxed">
+                We offer a comprehensive suite of digital services designed to help your business thrive. From concept to launch, we have got you covered.
+              </motion.p>
+
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}
+                className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4">
+                <Link href="/contact"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm sm:text-base font-semibold text-white bg-[#6C4CFF] hover:bg-[#5B3DE6] px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl transition-all duration-200 hover:shadow-[0_8px_30px_rgba(108,76,255,0.45)]">
+                  Get Free Consultation <ArrowRight size={18} />
+                </Link>
+                <Link href="/pricing"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm sm:text-base font-semibold text-white/90 bg-white/8 hover:bg-white/15 backdrop-blur-md px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl border border-white/15 hover:border-white/25 transition-all duration-200">
+                  View Pricing <ArrowRight size={18} />
+                </Link>
+              </motion.div>
+
+              {/* Quick Stats under CTA - desktop only */}
+              <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.5 }}
+                className="hidden lg:flex items-center gap-8 mt-10 xl:mt-12 pt-8 border-t border-white/10">
+                <div>
+                  <p className="text-2xl xl:text-3xl font-bold text-white">85<span className="text-[#8B5CFF]">+</span></p>
+                  <p className="text-xs text-white/40 mt-0.5">Happy Clients</p>
+                </div>
+                <div className="w-px h-10 bg-white/10" />
+                <div>
+                  <p className="text-2xl xl:text-3xl font-bold text-white">200<span className="text-[#8B5CFF]">+</span></p>
+                  <p className="text-xs text-white/40 mt-0.5">Projects Delivered</p>
+                </div>
+                <div className="w-px h-10 bg-white/10" />
+                <div>
+                  <p className="text-2xl xl:text-3xl font-bold text-white">5<span className="text-[#8B5CFF]">+</span></p>
+                  <p className="text-xs text-white/40 mt-0.5">Years Experience</p>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Female Image */}
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative flex-shrink-0 w-full max-w-[340px] sm:max-w-[400px] md:max-w-[440px] lg:max-w-[460px] xl:max-w-[500px]">
+              {/* Glow behind image */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-[#6C4CFF]/25 via-[#8B5CFF]/15 to-[#A78BFA]/10 rounded-[2rem] blur-2xl" />
+
+              {/* Image Container */}
+              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                <div className="relative aspect-[3/4]">
+                  <Image
+                    src="/services-hero-female.png"
+                    alt="Professional digital expert"
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 640px) 340px, (max-width: 768px) 400px, (max-width: 1024px) 440px, 460px"
+                    priority
+                  />
+                  {/* Bottom Gradient Overlay for blending */}
+                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#070B2B]/80 via-[#070B2B]/30 to-transparent" />
+                </div>
+              </div>
+
+              {/* Floating Glass Card - Right Side */}
+              <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.6 }}
+                className="absolute -right-3 sm:-right-5 md:-right-8 top-[18%] sm:top-[15%] hidden sm:block">
+                <div className="bg-white/10 backdrop-blur-xl border border-white/15 rounded-xl sm:rounded-2xl px-3 sm:px-4 py-2.5 sm:py-3 shadow-xl">
+                  <div className="flex items-center gap-2 sm:gap-2.5">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-[#6C4CFF]/25 flex items-center justify-center">
+                      <Rocket size={16} className="text-[#A78BFA]" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] sm:text-xs font-bold text-white">Fast Delivery</p>
+                      <p className="text-[9px] sm:text-[10px] text-white/40">On-time, every time</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Floating Glass Card - Left Side */}
+              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.7 }}
+                className="absolute -left-3 sm:-left-5 md:-left-8 bottom-[22%] sm:bottom-[20%] hidden sm:block">
+                <div className="bg-white/10 backdrop-blur-xl border border-white/15 rounded-xl sm:rounded-2xl px-3 sm:px-4 py-2.5 sm:py-3 shadow-xl">
+                  <div className="flex items-center gap-2 sm:gap-2.5">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-emerald-500/20 flex items-center justify-center">
+                      <CheckCircle size={16} className="text-emerald-400" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] sm:text-xs font-bold text-white">99.9% Uptime</p>
+                      <p className="text-[9px] sm:text-[10px] text-white/40">Guaranteed</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Bottom floating badge - mobile only */}
+              <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.8 }}
+                className="absolute -bottom-3 left-1/2 -translate-x-1/2 sm:hidden">
+                <div className="bg-[#6C4CFF] rounded-full px-4 py-2 shadow-lg shadow-[#6C4CFF]/30 flex items-center gap-2">
+                  <div className="flex -space-x-1.5">
+                    <div className="w-5 h-5 rounded-full bg-[#A78BFA] border-2 border-[#6C4CFF]" />
+                    <div className="w-5 h-5 rounded-full bg-[#C4B5FD] border-2 border-[#6C4CFF]" />
+                    <div className="w-5 h-5 rounded-full bg-white/30 border-2 border-[#6C4CFF]" />
+                  </div>
+                  <p className="text-[10px] font-bold text-white">85+ Clients Trust Us</p>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

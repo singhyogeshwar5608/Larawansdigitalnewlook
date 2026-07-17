@@ -124,9 +124,70 @@ const highlights = [
 ];
 
 const technologies = [
-  'React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Python',
-  'PostgreSQL', 'MongoDB', 'AWS', 'Vercel', 'Figma', 'WordPress',
-  'React Native', 'Flutter', 'Firebase', 'Docker',
+  {
+    name: 'React', color: '#61DAFB',
+    icon: (c: string) => <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="11" stroke={c} strokeWidth="1.2" strokeDasharray="3 2"/><ellipse cx="13" cy="13" rx="11" ry="4.5" stroke={c} strokeWidth="1.2"/><ellipse cx="13" cy="13" rx="4.5" ry="11" stroke={c} strokeWidth="1.2"/><circle cx="13" cy="13" r="2" fill={c}/></svg>
+  },
+  {
+    name: 'Next.js', color: '#FFFFFF',
+    icon: (c: string) => <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="11" stroke={c} strokeWidth="1.2"/><path d="M7 19V7l12 12H13" stroke={c} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/><path d="M13 13h6" stroke={c} strokeWidth="1.2" strokeLinecap="round"/></svg>
+  },
+  {
+    name: 'TypeScript', color: '#3178C6',
+    icon: (c: string) => <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="4" y="4" width="18" height="18" rx="3" stroke={c} strokeWidth="1.2"/><text x="13" y="17" textAnchor="middle" fill={c} fontSize="10" fontWeight="700" fontFamily="system-ui">TS</text></svg>
+  },
+  {
+    name: 'Tailwind CSS', color: '#06B6D4',
+    icon: (c: string) => <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M8 10c0-3 2-5 5-5 4 0 5 3 7 3.5S23 7 23 10c0 5-5 6-8 6s-3 2-5 2.5S6 20 6 18c0-3 2-4 2-8z" stroke={c} strokeWidth="1.2"/><path d="M10 12c.5-1 1.5-2 3-2 2 0 2.5 1 3.5 1.2" stroke={c} strokeWidth="1.2" strokeLinecap="round"/></svg>
+  },
+  {
+    name: 'Node.js', color: '#68A063',
+    icon: (c: string) => <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 3L22 8v10l-9 5-9-5V8l9-5z" stroke={c} strokeWidth="1.2"/><path d="M13 3v10M13 18v5M4 8l9 5M22 8l-9 5" stroke={c} strokeWidth="1" opacity="0.5"/></svg>
+  },
+  {
+    name: 'Python', color: '#FFD43B',
+    icon: (c: string) => <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 3c-4 0-6 1.5-6 4v3h6v1H6c-3 0-4 2.5-4 5s1 5 4 5h2v-3.5c0-1.5 1.2-3 3-3h5c1.5 0 3-1.2 3-3V7c0-1.5-1.5-4-6-4z" stroke={c} strokeWidth="1.2"/><circle cx="10" cy="7" r="1.2" fill={c}/><path d="M13 23c4 0 6-1.5 6-4v-3h-6v-1h7c3 0 4-2.5 4-5s-1-5-4-5h-2v3.5c0 1.5-1.2 3-3 3h-5c-1.5 0-3 1.2-3 3v5c0 1.5 1.5 4 6 4z" stroke={c} strokeWidth="1.2"/><circle cx="16" cy="19" r="1.2" fill={c}/></svg>
+  },
+  {
+    name: 'PostgreSQL', color: '#4169E1',
+    icon: (c: string) => <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 3c-5 0-9 2-9 6v5c0 4 4 6 9 6s9-2 9-6V9c0-4-4-6-9-6z" stroke={c} strokeWidth="1.2"/><ellipse cx="13" cy="9" rx="9" ry="6" stroke={c} strokeWidth="1.2"/><path d="M4 9v5c0 1.5 2 3 5 3.5" stroke={c} strokeWidth="1" strokeLinecap="round" opacity="0.5"/><ellipse cx="13" cy="9" rx="4" ry="2.5" stroke={c} strokeWidth="0.8" opacity="0.4"/></svg>
+  },
+  {
+    name: 'MongoDB', color: '#47A248',
+    icon: (c: string) => <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 2c-1 4-6 7-6 12 0 4 2.5 7 6 9 3.5-2 6-5 6-9 0-5-5-8-6-12z" stroke={c} strokeWidth="1.2"/><path d="M13 8c-.5 3-3 5-3 8 0 2.5 1.3 4.5 3 6" stroke={c} strokeWidth="1" opacity="0.5"/></svg>
+  },
+  {
+    name: 'AWS', color: '#FF9900',
+    icon: (c: string) => <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M4 17c2 1.5 5 2.5 9 2.5s7-1 9-2.5" stroke={c} strokeWidth="1.8" strokeLinecap="round"/><path d="M5 14l4-2v5l-4 2v-5z" fill={c} fillOpacity="0.2" stroke={c} strokeWidth="1"/><path d="M9 12l4-2v5l-4 2v-5z" fill={c} fillOpacity="0.3" stroke={c} strokeWidth="1"/><path d="M13 10l4-2v5l-4 2v-5z" fill={c} fillOpacity="0.15" stroke={c} strokeWidth="1"/><path d="M17 8l4-2v5l-4 2V8z" fill={c} fillOpacity="0.1" stroke={c} strokeWidth="1"/></svg>
+  },
+  {
+    name: 'Vercel', color: '#FFFFFF',
+    icon: (c: string) => <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 4L23 22H3L13 4z" stroke={c} strokeWidth="1.2" strokeLinejoin="round"/><path d="M8 16l5-8 5 8" stroke={c} strokeWidth="1" opacity="0.4"/></svg>
+  },
+  {
+    name: 'Figma', color: '#F24E1E',
+    icon: (c: string) => <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="8" y="3" width="10" height="10" rx="2" stroke={c} strokeWidth="1.2"/><rect x="8" y="13" width="10" height="10" rx="2" stroke={c} strokeWidth="1.2"/><circle cx="18" cy="8" r="5" stroke={c} strokeWidth="1.2"/><circle cx="18" cy="18" r="5" stroke={c} strokeWidth="1.2"/><circle cx="8" cy="18" r="5" stroke={c} strokeWidth="1.2"/></svg>
+  },
+  {
+    name: 'WordPress', color: '#21759B',
+    icon: (c: string) => <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="10" stroke={c} strokeWidth="1.2"/><text x="13" y="17" textAnchor="middle" fill={c} fontSize="12" fontWeight="700" fontFamily="serif">W</text></svg>
+  },
+  {
+    name: 'React Native', color: '#61DAFB',
+    icon: (c: string) => <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="10" stroke={c} strokeWidth="1.2"/><path d="M9 13l4-7 4 7-4 7-4-7z" stroke={c} strokeWidth="1.2" strokeLinejoin="round"/><path d="M7 10l6 3 6-3M7 16l6-3 6 3" stroke={c} strokeWidth="0.8" opacity="0.5"/></svg>
+  },
+  {
+    name: 'Flutter', color: '#54C5F8',
+    icon: (c: string) => <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M5 21L13 5l8 10H13l-3 6H5z" stroke={c} strokeWidth="1.2" strokeLinejoin="round"/><path d="M13 15l8 10" stroke={c} strokeWidth="1.5" strokeLinecap="round"/></svg>
+  },
+  {
+    name: 'Firebase', color: '#FFCA28',
+    icon: (c: string) => <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M7 22L4 4l7 4 2-2 7 6-5 10H7z" stroke={c} strokeWidth="1.2" strokeLinejoin="round"/><path d="M11 8l5 0" stroke={c} strokeWidth="1" strokeLinecap="round" opacity="0.5"/></svg>
+  },
+  {
+    name: 'Docker', color: '#2496ED',
+    icon: (c: string) => <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M4 14h3v-3H4v3zM8 14h3v-3H8v3zM12 14h3v-3h-3v3zM16 14h3v-3h-3v3zM8 10h3V7H8v3zM12 10h3V7h-3v3zM12 6h3V3h-3v3z" stroke={c} strokeWidth="1.1"/><path d="M4 17c3 2 6 3 10 3 3 0 5.5-1 7-2.5" stroke={c} strokeWidth="1.2" strokeLinecap="round" opacity="0.5"/></svg>
+  },
 ];
 
 const process = [
@@ -381,19 +442,34 @@ export default function ServicesPage() {
 
       {/* Technologies */}
       <AnimatedSection>
-        <section className="py-14 md:py-20 border-t border-white/5" style={{ background: '#0a0e27' }}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-            <p className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-[#8B5CFF] mb-2 sm:mb-3">Technologies We Use</p>
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-8 sm:mb-12">Built With the Best Tools</h2>
-            <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3 md:gap-4">
+        <section className="py-14 md:py-20 border-t border-white/5 relative" style={{ background: '#0a0e27' }}>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-[#6C4CFF]/4 rounded-full blur-[120px]" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+            <div className="text-center mb-10 sm:mb-14">
+              <p className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase text-[#8B5CFF] mb-2 sm:mb-3">Technologies We Use</p>
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4">Built With the Best Tools</h2>
+              <p className="text-sm sm:text-base text-white/40 max-w-lg mx-auto">We leverage cutting-edge technologies to deliver scalable, high-performance digital solutions.</p>
+            </div>
+
+            <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-8 gap-3 sm:gap-4 md:gap-5">
               {technologies.map((tech, i) => (
-                <motion.div key={tech}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                <motion.div key={tech.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: i * 0.03 }}
-                  className="bg-white/5 backdrop-blur-sm rounded-xl px-4 sm:px-5 md:px-6 py-2.5 sm:py-3 md:py-4 border border-white/10 hover:border-[#6C4CFF]/40 hover:bg-[#6C4CFF]/10 hover:-translate-y-1 transition-all duration-300 cursor-default">
-                  <p className="text-xs sm:text-sm md:text-base font-bold text-white">{tech}</p>
+                  transition={{ duration: 0.4, delay: i * 0.04 }}
+                  className="group relative flex flex-col items-center justify-center gap-2.5 sm:gap-3 bg-white/[0.04] backdrop-blur-sm rounded-2xl sm:rounded-3xl p-3.5 sm:p-4 md:p-5 border border-white/[0.08] hover:border-white/[0.18] hover:bg-white/[0.08] transition-all duration-300 cursor-default">
+                  {/* Hover glow */}
+                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
+                    style={{ background: `radial-gradient(150px circle at 50% 30%, ${tech.color}12, transparent 70%)` }} />
+
+                  <div className="relative z-10 flex flex-col items-center gap-2 sm:gap-2.5">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                      style={{ backgroundColor: `${tech.color}12` }}>
+                      {tech.icon(tech.color)}
+                    </div>
+                    <p className="text-[10px] sm:text-xs md:text-sm font-semibold text-white/70 group-hover:text-white text-center leading-tight transition-colors">{tech.name}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>

@@ -29,6 +29,8 @@ export default function PricingCard({
   badge,
 }: PricingCardProps) {
   const [dialogOpen, setDialogOpen] = useState(false);
+  const visibleFeatures = features.slice(0, 4);
+  const extraCount = features.length - 4;
 
   return (
     <>
@@ -41,99 +43,68 @@ export default function PricingCard({
           ? '0 20px 50px rgba(108,76,255,0.25)'
           : '0 20px 50px rgba(0,0,0,0.1)'
         }}
-        className={`relative rounded-2xl p-6 sm:p-7 transition-all duration-300 flex flex-col ${
+        className={`relative rounded-2xl p-5 transition-all duration-300 flex flex-col cursor-pointer ${
           highlighted
             ? 'bg-white border-2 border-[#6C4CFF] shadow-[0_8px_30px_rgba(108,76,255,0.15)]'
             : 'bg-white shadow-[0_2px_12px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.1)]'
         }`}
+        onClick={() => setDialogOpen(true)}
       >
         {/* Badge */}
         {badge && (
-          <div className="absolute -top-3 right-4 sm:right-6 bg-[#6C4CFF] text-white text-[10px] sm:text-xs font-bold px-3 sm:px-4 py-1 rounded-full shadow-[0_4px_12px_rgba(108,76,255,0.3)]">
+          <div className="absolute -top-3 right-4 bg-[#6C4CFF] text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-[0_4px_12px_rgba(108,76,255,0.3)]">
             {badge}
           </div>
         )}
 
-        {/* Icon */}
-        <div
-          className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center mb-4 sm:mb-5 cursor-pointer"
-          style={{
-            backgroundColor: highlighted ? '#6C4CFF' : '#F0EDFF',
-          }}
-          onClick={() => setDialogOpen(true)}
-        >
-          <Icon
-            size={24}
-            className="sm:hidden"
-            style={{ color: highlighted ? '#FFFFFF' : '#6C4CFF' }}
-          />
-          <Icon
-            size={26}
-            className="hidden sm:block"
-            style={{ color: highlighted ? '#FFFFFF' : '#6C4CFF' }}
-          />
+        {/* Top: Icon + Price */}
+        <div className="flex items-start justify-between mb-3">
+          <div
+            className="w-11 h-11 rounded-xl flex items-center justify-center"
+            style={{ backgroundColor: highlighted ? '#6C4CFF' : '#F0EDFF' }}
+          >
+            <Icon size={22} style={{ color: highlighted ? '#FFFFFF' : '#6C4CFF' }} />
+          </div>
+          <div className="text-right">
+            <p className="text-[9px] text-[#9CA3AF] font-medium uppercase tracking-wider">{priceNote}</p>
+            <p className="text-xl sm:text-2xl font-extrabold text-[#6C4CFF] leading-tight">{price}</p>
+          </div>
         </div>
 
-        {/* Title & Description */}
-        <Link href={`/contact?package=${encodeURIComponent(title)}`} className="group">
-          <h3 className="text-lg sm:text-xl font-bold text-[#111827] mb-1.5 sm:mb-2 group-hover:text-[#6C4CFF] transition-colors">{title}</h3>
-        </Link>
-        <p className="text-xs sm:text-sm text-[#6B7280] leading-relaxed mb-4 sm:mb-5">{description}</p>
-
-        {/* Price */}
-        <div className="mb-4 sm:mb-5">
-          <p className="text-[10px] sm:text-xs text-[#9CA3AF] font-medium uppercase tracking-wider mb-1">{priceNote}</p>
-          <p className="text-3xl sm:text-4xl font-extrabold text-[#6C4CFF]">
-            {price}
-          </p>
-        </div>
-
-        {/* Divider */}
-        <div className="h-px bg-gray-100 mb-4 sm:mb-5" />
+        {/* Title */}
+        <h3 className="text-base sm:text-lg font-bold text-[#111827] mb-1 leading-snug">{title}</h3>
 
         {/* Features */}
-        <ul className="space-y-2.5 sm:space-y-3 mb-5 sm:mb-6 flex-1">
-          {features.map((feature) => (
-            <li key={feature} className="flex items-start gap-2.5">
-              <div className="w-5 h-5 rounded-full bg-[#6C4CFF]/10 flex items-center justify-center shrink-0 mt-0.5">
-                <Check size={12} style={{ color: '#6C4CFF' }} />
+        <ul className="space-y-1.5 my-3 flex-1">
+          {visibleFeatures.map((feature) => (
+            <li key={feature} className="flex items-center gap-2">
+              <div className="w-4 h-4 rounded-full bg-[#6C4CFF]/10 flex items-center justify-center shrink-0">
+                <Check size={10} style={{ color: '#6C4CFF' }} />
               </div>
-              <span className="text-xs sm:text-sm text-[#374151] leading-snug">{feature}</span>
+              <span className="text-[11px] sm:text-xs text-[#374151] leading-tight">{feature}</span>
             </li>
           ))}
+          {extraCount > 0 && (
+            <li className="text-[11px] font-semibold text-[#6C4CFF] pl-6">+{extraCount} more features</li>
+          )}
         </ul>
 
-        {/* Delivery */}
-        <div className="flex items-center gap-2 mb-4 sm:mb-5">
-          <div className="w-6 h-6 rounded-full bg-[#F0EDFF] flex items-center justify-center">
-            <Clock size={12} style={{ color: '#6C4CFF' }} />
+        {/* Delivery + CTA row */}
+        <div className="flex items-center justify-between gap-3 pt-3 border-t border-gray-100">
+          <div className="flex items-center gap-1.5 min-w-0">
+            <Clock size={12} className="text-[#6C4CFF] shrink-0" />
+            <span className="text-[10px] sm:text-xs text-[#6B7280] truncate">{delivery}</span>
           </div>
-          <span className="text-xs sm:text-sm font-medium text-[#6B7280]">{delivery}</span>
-        </div>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col gap-2.5">
           <button
-            onClick={() => setDialogOpen(true)}
-            className={`block text-center py-3 sm:py-3.5 rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 flex items-center justify-center gap-2 ${
+            onClick={(e) => { e.stopPropagation(); setDialogOpen(true); }}
+            className={`shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-300 ${
               highlighted
-                ? 'bg-[#6C4CFF] text-white hover:bg-[#5B3DE6] hover:shadow-[0_6px_20px_rgba(108,76,255,0.4)]'
+                ? 'bg-[#6C4CFF] text-white hover:bg-[#5B3DE6]'
                 : 'bg-[#F0EDFF] text-[#6C4CFF] hover:bg-[#6C4CFF] hover:text-white'
             }`}
           >
-            Get Started
-            <ArrowRight size={16} />
+            Get Started <ArrowRight size={12} />
           </button>
-
-          <a
-            href={`https://wa.me/919876543210?text=Hi, I'm interested in the ${encodeURIComponent(title)} package (${price}). Can you share more details?`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block text-center py-2.5 sm:py-3 rounded-xl font-medium text-xs sm:text-sm text-[#6B7280] border border-gray-200 hover:border-[#6C4CFF] hover:text-[#6C4CFF] transition-all duration-300 flex items-center justify-center gap-2"
-          >
-            <MessageCircle size={14} />
-            Ask on WhatsApp
-          </a>
         </div>
       </motion.div>
 

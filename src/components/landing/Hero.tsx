@@ -8,11 +8,11 @@ const avatarColors = ['#6C4CFF', '#EC4899', '#F59E0B', '#10B981', '#3B82F6'];
 
 export default function Hero() {
   return (
-    <section className="relative pt-[70px] overflow-hidden" style={{ background: 'linear-gradient(180deg, #F0EDFF 0%, #F7F5FF 40%, #FAFBFF 100%)' }}>
+    <section className="relative pt-[70px] overflow-hidden" style={{ background: 'linear-gradient(135deg, #070B2B 0%, #101B5A 50%, #1A1443 100%)' }}>
       {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-[#6C4CFF]/8 rounded-full blur-3xl" />
-      <div className="absolute bottom-10 right-20 w-96 h-96 bg-[#8B5CFF]/8 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#C4B5FD]/5 rounded-full blur-[120px]" />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-[#6C4CFF]/15 rounded-full blur-3xl" />
+      <div className="absolute bottom-10 right-20 w-96 h-96 bg-[#8B5CFF]/15 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#6C4CFF]/10 rounded-full blur-[120px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-14 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
@@ -22,7 +22,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-[1.15] text-[#1a1a2e] mb-4 sm:mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-[1.15] text-white mb-4 sm:mb-6"
             >
               We Design Digital{' '}
               <br className="hidden sm:block" />
@@ -34,7 +34,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-sm sm:text-base md:text-lg text-[#64748B] leading-relaxed mb-6 sm:mb-8 max-w-lg"
+              className="text-sm sm:text-base md:text-lg text-white/70 leading-relaxed mb-6 sm:mb-8 max-w-lg"
             >
               We help startups, businesses and brands grow online with stunning websites, mobile apps and result-driven marketing.
             </motion.p>
@@ -55,7 +55,7 @@ export default function Hero() {
               </Link>
               <Link
                 href="/portfolio"
-                className="inline-flex items-center justify-center gap-2 text-sm sm:text-base font-semibold text-[#6C4CFF] bg-white hover:bg-[#6C4CFF]/5 px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg border border-[#6C4CFF]/20 transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 text-sm sm:text-base font-semibold text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg border border-white/20 transition-all duration-200"
               >
                 View Our Work
                 <ArrowRight size={16} className="sm:hidden" />
@@ -84,9 +84,9 @@ export default function Hero() {
               <div>
                 <div className="flex items-center gap-1">
                   <span className="text-[#F59E0B] text-xs sm:text-sm">★★★★★</span>
-                  <span className="text-xs sm:text-sm font-bold text-[#2D3748]">4.9</span>
+                  <span className="text-xs sm:text-sm font-bold text-white">4.9</span>
                 </div>
-                <p className="text-[10px] sm:text-xs text-[#64748B]">120+ Reviews</p>
+                <p className="text-[10px] sm:text-xs text-white/50">120+ Reviews</p>
               </div>
             </motion.div>
           </div>
@@ -98,48 +98,48 @@ export default function Hero() {
               initial={{ opacity: 0, x: 30, scale: 0.95 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative z-10 bg-white rounded-xl sm:rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.1)] p-4 sm:p-5 w-full max-w-md"
+              className="relative z-10 bg-white/10 backdrop-blur-xl rounded-xl sm:rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.3)] border border-white/10 p-4 sm:p-5 w-full max-w-md"
             >
               {/* Dashboard Header */}
               <div className="flex items-center justify-between mb-4 sm:mb-5">
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#10B981]" />
-                  <span className="text-xs sm:text-sm font-semibold text-[#2D3748]">Analytics Overview</span>
+                  <span className="text-xs sm:text-sm font-semibold text-white">Analytics Overview</span>
                 </div>
-                <span className="text-[10px] sm:text-xs text-[#94A3B8]">This Month</span>
+                <span className="text-[10px] sm:text-xs text-white/50">This Month</span>
               </div>
 
               {/* Metric Cards Row */}
               <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-3 sm:mb-4">
-                <div className="bg-[#F8FAFC] rounded-lg sm:rounded-xl p-2.5 sm:p-3">
+                <div className="bg-white/5 rounded-lg sm:rounded-xl p-2.5 sm:p-3 border border-white/5">
                   <div className="flex items-center gap-1.5 sm:gap-2 mb-1">
                     <TrendingUp size={12} className="sm:hidden text-[#10B981]" />
                     <TrendingUp size={14} className="hidden sm:block text-[#10B981]" />
-                    <span className="text-[10px] sm:text-xs text-[#94A3B8]">Total Visitors</span>
+                    <span className="text-[10px] sm:text-xs text-white/50">Total Visitors</span>
                   </div>
-                  <p className="text-base sm:text-lg font-bold text-[#1a1a2e]">24,580</p>
+                  <p className="text-base sm:text-lg font-bold text-white">24,580</p>
                   <p className="text-[10px] sm:text-xs text-[#10B981] font-medium">↑ 12.5% this month</p>
                 </div>
-                <div className="bg-[#F8FAFC] rounded-lg sm:rounded-xl p-2.5 sm:p-3">
+                <div className="bg-white/5 rounded-lg sm:rounded-xl p-2.5 sm:p-3 border border-white/5">
                   <div className="flex items-center gap-1.5 sm:gap-2 mb-1">
                     <Users size={12} className="sm:hidden text-[#6C4CFF]" />
                     <Users size={14} className="hidden sm:block text-[#6C4CFF]" />
-                    <span className="text-[10px] sm:text-xs text-[#94A3B8]">Leads Generated</span>
+                    <span className="text-[10px] sm:text-xs text-white/50">Leads Generated</span>
                   </div>
-                  <p className="text-base sm:text-lg font-bold text-[#1a1a2e]">1,458</p>
+                  <p className="text-base sm:text-lg font-bold text-white">1,458</p>
                   <p className="text-[10px] sm:text-xs text-[#10B981] font-medium">↑ 8.6%</p>
                 </div>
               </div>
 
               {/* Projects Delivered */}
-              <div className="bg-gradient-to-r from-[#6C4CFF]/10 to-[#8B5CFF]/10 rounded-lg sm:rounded-xl p-2.5 sm:p-3 mb-3 sm:mb-4">
+              <div className="bg-[#6C4CFF]/20 border border-[#6C4CFF]/20 rounded-lg sm:rounded-xl p-2.5 sm:p-3 mb-3 sm:mb-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <FolderCheck size={14} className="sm:hidden text-[#6C4CFF]" />
                     <FolderCheck size={16} className="hidden sm:block text-[#6C4CFF]" />
                     <div>
-                      <p className="text-xs sm:text-sm font-semibold text-[#2D3748]">Projects Delivered</p>
-                      <p className="text-[10px] sm:text-xs text-[#94A3B8]">This Year</p>
+                      <p className="text-xs sm:text-sm font-semibold text-white">Projects Delivered</p>
+                      <p className="text-[10px] sm:text-xs text-white/50">This Year</p>
                     </div>
                   </div>
                   <span className="text-lg sm:text-xl font-bold text-[#6C4CFF]">120+</span>
@@ -147,14 +147,14 @@ export default function Hero() {
               </div>
 
               {/* Mini Chart */}
-              <div className="h-12 sm:h-16 bg-gradient-to-r from-[#6C4CFF]/5 to-transparent rounded-lg sm:rounded-xl flex items-end px-2 sm:px-3 pb-2 gap-0.5 sm:gap-1">
+              <div className="h-12 sm:h-16 bg-white/5 rounded-lg sm:rounded-xl flex items-end px-2 sm:px-3 pb-2 gap-0.5 sm:gap-1 border border-white/5">
                 {[40, 55, 35, 60, 45, 70, 55, 80, 65, 75, 85, 70].map((h, i) => (
                   <div
                     key={i}
                     className="flex-1 rounded-t-sm"
                     style={{
                       height: `${h}%`,
-                      background: i >= 10 ? '#6C4CFF' : '#E2E0FF',
+                      background: i >= 10 ? '#6C4CFF' : 'rgba(108,76,255,0.25)',
                     }}
                   />
                 ))}
@@ -168,26 +168,26 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="hidden sm:block absolute -right-2 sm:-right-4 lg:-right-8 bottom-0 z-20"
             >
-              <div className="w-36 sm:w-44 lg:w-52 bg-white rounded-[2rem] sm:rounded-[2.5rem] p-[5px] sm:p-[6px] shadow-[0_20px_60px_rgba(0,0,0,0.15)] border border-gray-200">
-                <div className="w-16 sm:w-20 h-4 sm:h-5 bg-white rounded-b-xl sm:rounded-b-2xl mx-auto relative">
-                  <div className="w-8 sm:w-10 h-[4px] sm:h-[5px] bg-gray-900 rounded-full mx-auto mt-1" />
+              <div className="w-36 sm:w-44 lg:w-52 bg-[#1a1a2e] rounded-[2rem] sm:rounded-[2.5rem] p-[5px] sm:p-[6px] shadow-[0_20px_60px_rgba(0,0,0,0.4)] border border-white/10">
+                <div className="w-16 sm:w-20 h-4 sm:h-5 bg-[#1a1a2e] rounded-b-xl sm:rounded-b-2xl mx-auto relative">
+                  <div className="w-8 sm:w-10 h-[4px] sm:h-[5px] bg-white/30 rounded-full mx-auto mt-1" />
                 </div>
-                <div className="bg-white rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden min-h-[220px] sm:min-h-[280px] lg:min-h-[320px] flex flex-col">
+                <div className="bg-[#0f0f2a] rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden min-h-[220px] sm:min-h-[280px] lg:min-h-[320px] flex flex-col">
                   <div className="flex items-center justify-between px-3 sm:px-4 pt-2 sm:pt-3 pb-1 sm:pb-2">
-                    <span className="text-[9px] sm:text-[10px] font-semibold text-gray-800">9:41</span>
+                    <span className="text-[9px] sm:text-[10px] font-semibold text-white/70">9:41</span>
                     <div className="flex items-center gap-1">
-                      <div className="w-3 sm:w-4 h-1.5 sm:h-2 bg-gray-800 rounded-sm" />
-                      <div className="w-1 sm:w-1.5 h-2 sm:h-2.5 bg-gray-800 rounded-sm" />
+                      <div className="w-3 sm:w-4 h-1.5 sm:h-2 bg-white/50 rounded-sm" />
+                      <div className="w-1 sm:w-1.5 h-2 sm:h-2.5 bg-white/50 rounded-sm" />
                     </div>
                   </div>
                   <div className="px-3 sm:px-4 pb-1 sm:pb-2">
-                    <p className="text-[9px] sm:text-[10px] text-gray-500 font-medium">Larawans Digital</p>
-                    <p className="text-xs sm:text-sm font-bold text-gray-900">Business Growth</p>
+                    <p className="text-[9px] sm:text-[10px] text-white/40 font-medium">Larawans Digital</p>
+                    <p className="text-xs sm:text-sm font-bold text-white">Business Growth</p>
                   </div>
                   <div className="px-3 sm:px-4 py-2 sm:py-3">
-                    <div className="bg-gradient-to-br from-[#6C4CFF]/10 to-[#8B5CFF]/5 rounded-lg sm:rounded-xl p-2 sm:p-3">
+                    <div className="bg-[#6C4CFF]/20 border border-[#6C4CFF]/20 rounded-lg sm:rounded-xl p-2 sm:p-3">
                       <p className="text-2xl sm:text-3xl font-bold text-[#6C4CFF]">75%</p>
-                      <p className="text-[9px] sm:text-[10px] text-gray-500 mt-0.5">Growth Rate</p>
+                      <p className="text-[9px] sm:text-[10px] text-white/40 mt-0.5">Growth Rate</p>
                     </div>
                   </div>
                   <div className="flex-1 flex items-end gap-1 sm:gap-1.5 px-3 sm:px-4 mb-2 sm:mb-3">
@@ -195,7 +195,7 @@ export default function Hero() {
                       <div
                         key={i}
                         className="flex-1 rounded-t-sm"
-                        style={{ height: `${h}%`, backgroundColor: i >= 8 ? '#6C4CFF' : '#E8E0FF' }}
+                        style={{ height: `${h}%`, backgroundColor: i >= 8 ? '#6C4CFF' : 'rgba(108,76,255,0.2)' }}
                       />
                     ))}
                   </div>
@@ -213,13 +213,13 @@ export default function Hero() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="hidden md:block absolute -top-4 left-4 lg:left-0 z-30 bg-white rounded-xl shadow-lg px-3 py-2 flex items-center gap-2"
+              className="hidden md:block absolute -top-4 left-4 lg:left-0 z-30 bg-white/10 backdrop-blur-xl rounded-xl shadow-lg px-3 py-2 flex items-center gap-2 border border-white/10"
             >
-              <div className="w-8 h-8 rounded-lg bg-[#10B981]/10 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-[#10B981]/20 flex items-center justify-center">
                 <CheckCircle size={16} className="text-[#10B981]" />
               </div>
               <div>
-                <p className="text-xs font-semibold text-[#2D3748]">E-Commerce</p>
+                <p className="text-xs font-semibold text-white">E-Commerce</p>
                 <p className="text-[10px] text-[#10B981]">Website</p>
               </div>
             </motion.div>
@@ -228,14 +228,14 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.9 }}
-              className="hidden md:block absolute -bottom-4 left-8 lg:left-4 z-30 bg-white rounded-xl shadow-lg px-3 py-2 flex items-center gap-2"
+              className="hidden md:block absolute -bottom-4 left-8 lg:left-4 z-30 bg-white/10 backdrop-blur-xl rounded-xl shadow-lg px-3 py-2 flex items-center gap-2 border border-white/10"
             >
-              <div className="w-8 h-8 rounded-lg bg-[#6C4CFF]/10 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-[#6C4CFF]/20 flex items-center justify-center">
                 <TrendingUp size={16} className="text-[#6C4CFF]" />
               </div>
               <div>
-                <p className="text-xs font-semibold text-[#2D3748]">+24.5%</p>
-                <p className="text-[10px] text-[#94A3B8]">Revenue Growth</p>
+                <p className="text-xs font-semibold text-white">+24.5%</p>
+                <p className="text-[10px] text-white/50">Revenue Growth</p>
               </div>
             </motion.div>
           </div>
